@@ -2,11 +2,12 @@
   "name": "nodejs-restfull-api",
   "version": "1.0.0",
   "description": "Belajar NodeJS Restfull API",
-  "main": "src/main.js",
+  "main": "main.js",
   "types": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node src/main.js"
+    "start": "node src/main.js",
+    "postinstall": "prisma generate"
   },
   "jest": {
     "transform": {
