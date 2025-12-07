@@ -8,4 +8,4 @@ if (process.env.NODE_ENV !== 'test') {
     });
 }
 
-export { logger, web };
+export default web;
