@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useEffectOnce, useLocalStorage } from "react-use";
 import { contactDelete, contactsList } from "../../lib/api/ContactApi.js";
 import { alertConfirm, alertError, alertSuccess } from "../../lib/alert.js";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function ContactList() {
 
-    const [token, _] = useLocalStorage("token", "");
+    const [token, setToken] = useLocalStorage("token", "");
+    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -36,6 +37,11 @@ export default function ContactList() {
 
     async function fetchContacts() {
         const response = await contactsList(token, { name, phone, email, page });
+        if (response.status === 401) {
+            setToken(""); // Hapus token
+            navigate("/login"); // Tendang ke login
+            return;
+        }
         const responseBody = await response.json();
         console.log(responseBody);
 
