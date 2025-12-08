@@ -147,7 +147,10 @@ const search = async (user, request) => {
             AND: filters
         },
         take: request.size,
-        skip: skip
+        skip: skip,
+        orderBy: {
+            id: 'desc'
+        }
     });
 
     const totalItems = await prismaClient.contact.count({
