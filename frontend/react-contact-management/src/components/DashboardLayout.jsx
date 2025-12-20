@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router";
 
 export default function DashboardLayout() {
     return <>
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex flex-col">
+        <div className="bg-linear-to-br from-gray-900 to-gray-800 min-h-screen flex flex-col">
             <header className="bg-gradient shadow-lg">
                 <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                     <Link to="/dashboard/contacts" className="flex items-center hover:opacity-90 transition-opacity duration-200">
