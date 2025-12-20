@@ -112,7 +112,7 @@ Response Body Success:
 {
     "data" : {
         "username" : "brads",
-        "name" : "Fahrul M Siddiq
+        "name" : "Fahrul M Siddiq"
     }
 }
 ```
