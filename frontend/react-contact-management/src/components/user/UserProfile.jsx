@@ -63,7 +63,7 @@ export default function UserProfile() {
     })
     
     return <>
-        <main className="container mx-auto px-4 py-8 flex-grow">
+        <main className="container mx-auto px-4 py-8 grow">
             <div className="flex items-center mb-6">
                 <i className="fas fa-user-cog text-blue-400 text-2xl mr-3" />
                 <h1 className="text-2xl font-bold text-white">My Profile</h1>
